@@ -26,9 +26,7 @@ export const fetchAllContent = createAsyncThunk(
     const newsApiKey = process.env.NEXT_PUBLIC_NEWS_API_KEY;
     const tmdbApiKey = process.env.NEXT_PUBLIC_TMDB_API_KEY;
 
-    const newsPromise = axios.get(
-      `https://newsapi.org/v2/top-headlines?country=us&category=technology&apiKey=${newsApiKey}`
-    );
+    const newsPromise = axios.get('/api/news');
     const recommendationsPromise = axios.get(
       `https://api.themoviedb.org/3/movie/popular?api_key=${tmdbApiKey}`
     );
