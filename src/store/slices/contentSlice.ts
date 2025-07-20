@@ -43,10 +43,10 @@ export const fetchAllContent = createAsyncThunk(
     );
 
     const normalizedRecommendations = recommendationsResponse.data.Search.map(
-      (movie: ContentItem) => ({
+      (movie: ContentItem, index:number) => ({
         title: movie.Title,
         poster_path: movie.Poster,
-        id: `movie-${movie.imdbID}`,
+        id: `movie-${movie.imdbID || index}`,
       })
     );
 

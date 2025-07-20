@@ -28,6 +28,7 @@ export const ContentCard: React.FC<ContentCardProps> = ({ item }) => {
     item.Poster ||
     item.imageUrl ||
     item.urlToImage ||
+    item.poster_path ||
     "https://via.placeholder.com/600x400.png?text=No+Image";
 
   const sourceName = item.source?.name || item.platform;

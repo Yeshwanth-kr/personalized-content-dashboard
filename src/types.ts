@@ -14,4 +14,5 @@ export interface ContentItem {
   text?: string;
   caption?: string;
   imdbID?:string;
+  poster_path?:string;
 }
