@@ -1,4 +1,3 @@
-// src/components/Spinner.tsx
 "use client";
 
 import { motion } from "framer-motion";

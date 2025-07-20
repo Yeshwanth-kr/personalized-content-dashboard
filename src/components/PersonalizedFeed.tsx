@@ -1,4 +1,3 @@
-// src/components/PersonalizedFeed.tsx
 "use client";
 
 import React, { useEffect, useState } from "react";
@@ -8,9 +7,9 @@ import { fetchAllContent } from "@/store/slices/contentSlice";
 import { DraggableContentCard } from "./DraggableContentCard"; // We will create this next
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
-import { Spinner } from "./Spinner"; // Import the spinner
+import { Spinner } from "./Spinner";
 import { motion } from "framer-motion";
-import { ContentItem } from "@/types"; // Import
+import { ContentItem } from "@/types";
 
 export const PersonalizedFeed = () => {
   const dispatch = useDispatch<AppDispatch>();

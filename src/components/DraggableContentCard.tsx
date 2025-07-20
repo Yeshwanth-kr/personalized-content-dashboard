@@ -1,4 +1,3 @@
-// src/components/DraggableContentCard.tsx
 "use client";
 
 import React, { useRef } from "react";

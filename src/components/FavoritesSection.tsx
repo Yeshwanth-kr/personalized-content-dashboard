@@ -1,4 +1,3 @@
-// src/components/FavoritesSection.tsx
 "use client";
 
 import React from "react";

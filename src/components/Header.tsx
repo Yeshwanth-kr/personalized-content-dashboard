@@ -1,4 +1,3 @@
-// src/components/Header.tsx
 "use client";
 
 import React, { useState, useEffect } from "react";
@@ -11,7 +10,7 @@ import { ThemeToggleButton } from "./ThemeToggleButton";
 export const Header = () => {
   const dispatch = useDispatch<AppDispatch>();
   const [inputValue, setInputValue] = useState("");
-  const debouncedSearchTerm = useDebounce(inputValue, 500); // 500ms delay
+  const debouncedSearchTerm = useDebounce(inputValue, 500);
 
   useEffect(() => {
     dispatch(setSearchTerm(debouncedSearchTerm));

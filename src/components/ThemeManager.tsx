@@ -1,4 +1,3 @@
-// src/components/ThemeManager.tsx
 "use client";
 
 import { useSelector } from 'react-redux';

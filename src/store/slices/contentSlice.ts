@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";
 import axios from "axios";
-import { ContentItem } from "@/types"; // Import the new type
+import { ContentItem } from "@/types";
 
 // Define the state structure
 interface ContentState {
@@ -23,10 +23,9 @@ const initialState: ContentState = {
 export const fetchAllContent = createAsyncThunk(
   "content/fetchAll",
   async () => {
-    const newsApiKey = process.env.NEXT_PUBLIC_NEWS_API_KEY;
     const tmdbApiKey = process.env.NEXT_PUBLIC_TMDB_API_KEY;
 
-    const newsPromise = axios.get('/api/news');
+    const newsPromise = axios.get("/api/news");
     const recommendationsPromise = axios.get(
       `https://api.themoviedb.org/3/movie/popular?api_key=${tmdbApiKey}`
     );

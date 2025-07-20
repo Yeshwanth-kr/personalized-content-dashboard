@@ -1,12 +1,12 @@
-// src/components/ContentCard.tsx
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "@/store/store";
 import { toggleFavorite } from "@/store/slices/favoritesSlice";
 import { ContentItem } from "@/types"; // Import
+import Image from "next/image";
 
 interface ContentCardProps {
-  item: ContentItem; // Replace custom type with ContentItem
+  item: ContentItem;
 }
 
 export const ContentCard: React.FC<ContentCardProps> = ({ item }) => {
@@ -19,7 +19,6 @@ export const ContentCard: React.FC<ContentCardProps> = ({ item }) => {
   const isFavorite = favoriteItems.some((favItem) => favItem.id === item.id);
 
   const handleToggleFavorite = () => {
-    // The item prop is now guaranteed to have a consistent ID
     dispatch(toggleFavorite(item));
   };
 
@@ -38,7 +37,7 @@ export const ContentCard: React.FC<ContentCardProps> = ({ item }) => {
       {/* Favorite Button */}
       <button
         onClick={handleToggleFavorite}
-        className="absolute top-2 right-2 p-2 rounded-full bg-black bg-opacity-50 text-white"
+        className="absolute top-2 right-2 p-2 rounded-full bg-black bg-opacity-50 text-white z-10" // Added z-10 to ensure it's on top
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -56,7 +55,17 @@ export const ContentCard: React.FC<ContentCardProps> = ({ item }) => {
         </svg>
       </button>
 
-      <img className="w-full h-48 object-cover" src={image} alt={title} />
+      <div className="relative w-full h-48">
+        <Image
+          src={image}
+          alt={title || "Content Image"}
+          fill
+          priority={true}
+          style={{ objectFit: "cover" }}
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+        />
+      </div>
+
       <div className="p-4">
         {sourceName && (
           <p className="text-sm text-gray-500 dark:text-gray-400 mb-1">

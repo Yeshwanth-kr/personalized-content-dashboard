@@ -1,6 +1,7 @@
 {
   "name": "personalized-content-dashboard",
   "version": "0.1.0",
+  "description": "Your daily dashboard for news, media, and more.",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -8,6 +9,16 @@
     "start": "next start",
     "lint": "next lint"
   },
+  "author": "Yeshwanth Krishna",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Yeshwanth-kr/personalized-content-dashboard/"
+  },
+  "keywords": [
+    "personalized-content-dashboard",
+    "Your daily dashboard for news, media, and more."
+  ],
   "dependencies": {
     "@reduxjs/toolkit": "^2.8.2",
     "axios": "^1.10.0",
