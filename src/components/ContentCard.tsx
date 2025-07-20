@@ -3,15 +3,10 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "@/store/store";
 import { toggleFavorite } from "@/store/slices/favoritesSlice";
-
-// A generic type for any kind of content item
-type ContentItem = {
-  id: string | number;
-  [key: string]: any;
-};
+import { ContentItem } from "@/types"; // Import
 
 interface ContentCardProps {
-  item: ContentItem;
+  item: ContentItem; // Replace custom type with ContentItem
 }
 
 export const ContentCard: React.FC<ContentCardProps> = ({ item }) => {

@@ -10,14 +10,16 @@ import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 import { Spinner } from "./Spinner"; // Import the spinner
 import { motion } from "framer-motion";
+import { ContentItem } from "@/types"; // Import
 
 export const PersonalizedFeed = () => {
   const dispatch = useDispatch<AppDispatch>();
-  const { news, recommendations, socialPosts, status, error, searchTerm } =
-    useSelector((state: RootState) => state.content);
+  const { news, recommendations, status, error, searchTerm } = useSelector(
+    (state: RootState) => state.content
+  );
 
   // Use local state to manage the order of cards
-  const [cards, setCards] = useState<any[]>([]);
+  const [cards, setCards] = useState<ContentItem[]>([]); // Use ContentItem[]
 
   useEffect(() => {
     if (status === "idle") {
@@ -37,7 +39,7 @@ export const PersonalizedFeed = () => {
       );
     });
     setCards(filteredContent);
-  }, [news, recommendations, socialPosts, searchTerm]);
+  }, [news, recommendations, searchTerm]);
 
   const moveCard = (dragIndex: number, hoverIndex: number) => {
     const dragCard = cards[dragIndex];

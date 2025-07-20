@@ -4,11 +4,12 @@
 import React, { useRef } from "react";
 import { useDrag, useDrop } from "react-dnd";
 import { ContentCard } from "./ContentCard";
+import { ContentItem } from "@/types"; // Import
 
 const ItemType = "CARD"; // Defines the type of item being dragged
 
 interface DraggableContentCardProps {
-  item: any;
+  item: ContentItem; // Replace any with ContentItem
   index: number;
   moveCard: (dragIndex: number, hoverIndex: number) => void;
 }

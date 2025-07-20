@@ -17,7 +17,7 @@ export const FavoritesSection = () => {
       <div className="text-center p-10">
         <h2 className="text-2xl font-bold mb-4">Your Favorites</h2>
         <p>
-          You haven't favorited any content yet. Click the star on any item to
+          You have not favorited any content yet. Click the star on any item to
           save it here!
         </p>
       </div>

@@ -1,29 +1,14 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";
 import axios from "axios";
-
-// Define types for your data
-export interface Article {
-  title: string;
-  description: string;
-  urlToImage: string;
-  url: string;
-  source: { name: string };
-}
-
-export interface Movie {
-  id: number;
-  title: string;
-  overview: string;
-  poster_path: string;
-}
+import { ContentItem } from "@/types"; // Import the new type
 
 // Define the state structure
 interface ContentState {
-  news: Article[];
-  recommendations: Movie[];
+  news: ContentItem[]; // Use ContentItem
+  recommendations: ContentItem[]; // Use ContentItem
+  searchTerm: string;
   status: "idle" | "loading" | "succeeded" | "failed";
   error: string | null | undefined;
-  searchTerm: string; // Add this
 }
 
 const initialState: ContentState = {
@@ -54,16 +39,16 @@ export const fetchAllContent = createAsyncThunk(
     ]);
 
     const normalizedNews = newsResponse.data.articles.map(
-      (article: Article, index: number) => ({
+      (article: ContentItem, index: number) => ({
         ...article,
-        id: `news-${article.url || index}`, // Use URL for news as it's unique
+        id: `news-${article.url || index}`,
       })
     );
 
     const normalizedRecommendations = recommendationsResponse.data.results.map(
-      (movie: Movie) => ({
+      (movie: ContentItem) => ({
         ...movie,
-        id: `movie-${movie.id}`, // Prefix movie IDs
+        id: `movie-${movie.id}`,
       })
     );
 

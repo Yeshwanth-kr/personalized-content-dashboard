@@ -1,11 +1,6 @@
 // src/store/slices/favoritesSlice.ts
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-
-// Define a generic type for our content items
-interface ContentItem {
-  id: string | number;
-  [key: string]: any; // Allow other properties
-}
+import { ContentItem } from "@/types"; // 1. Import the type
 
 interface FavoritesState {
   items: ContentItem[];
