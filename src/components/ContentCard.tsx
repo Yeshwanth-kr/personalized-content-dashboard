@@ -25,11 +25,11 @@ export const ContentCard: React.FC<ContentCardProps> = ({ item }) => {
   const title = item.title;
   const description = item.description || item.overview || item.text;
   const image =
+    item.Poster ||
     item.imageUrl ||
     item.urlToImage ||
-    (item.poster_path
-      ? `https://image.tmdb.org/t/p/w500${item.poster_path}`
-      : "https://via.placeholder.com/600x400.png?text=No+Image");
+    "https://via.placeholder.com/600x400.png?text=No+Image";
+
   const sourceName = item.source?.name || item.platform;
 
   return (

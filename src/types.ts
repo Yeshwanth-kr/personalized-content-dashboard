@@ -6,10 +6,12 @@ export interface ContentItem {
   urlToImage?: string;
   source?: { name: string };
   overview?: string;
-  poster_path?: string;
+  Title?:string;
+  Poster?: string;
   platform?: string;
   user?: string;
   imageUrl?: string;
   text?: string;
   caption?: string;
+  imdbID?:string;
 }

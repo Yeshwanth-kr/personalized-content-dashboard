@@ -4,8 +4,8 @@ import { ContentItem } from "@/types";
 
 // Define the state structure
 interface ContentState {
-  news: ContentItem[]; // Use ContentItem
-  recommendations: ContentItem[]; // Use ContentItem
+  news: ContentItem[];
+  recommendations: ContentItem[];
   searchTerm: string;
   status: "idle" | "loading" | "succeeded" | "failed";
   error: string | null | undefined;
@@ -23,11 +23,11 @@ const initialState: ContentState = {
 export const fetchAllContent = createAsyncThunk(
   "content/fetchAll",
   async () => {
-    const tmdbApiKey = process.env.NEXT_PUBLIC_TMDB_API_KEY;
+    const omdbApiKey = process.env.NEXT_PUBLIC_OMDB_API_KEY;
 
     const newsPromise = axios.get("/api/news");
     const recommendationsPromise = axios.get(
-      `https://api.themoviedb.org/3/movie/popular?api_key=${tmdbApiKey}`
+      `https://www.omdbapi.com/?s=space&type=movie&apikey=${omdbApiKey}`
     );
 
     const [newsResponse, recommendationsResponse] = await Promise.all([
@@ -42,10 +42,11 @@ export const fetchAllContent = createAsyncThunk(
       })
     );
 
-    const normalizedRecommendations = recommendationsResponse.data.results.map(
+    const normalizedRecommendations = recommendationsResponse.data.Search.map(
       (movie: ContentItem) => ({
-        ...movie,
-        id: `movie-${movie.id}`,
+        title: movie.Title,
+        poster_path: movie.Poster,
+        id: `movie-${movie.imdbID}`,
       })
     );
 

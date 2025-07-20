@@ -11,7 +11,7 @@ export async function GET() {
     return NextResponse.json(response.data);
   } catch (error) {
     return NextResponse.json(
-      { message: "Error fetching news from proxy" },
+      { message: "Error fetching news from proxy", error },
       { status: 500 }
     );
   }
