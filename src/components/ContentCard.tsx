@@ -2,7 +2,7 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "@/store/store";
 import { toggleFavorite } from "@/store/slices/favoritesSlice";
-import { ContentItem } from "@/types"; // Import
+import { ContentItem } from "@/types";
 import Image from "next/image";
 
 interface ContentCardProps {
@@ -38,7 +38,7 @@ export const ContentCard: React.FC<ContentCardProps> = ({ item }) => {
       {/* Favorite Button */}
       <button
         onClick={handleToggleFavorite}
-        className="absolute top-2 right-2 p-2 rounded-full bg-black bg-opacity-50 text-white z-10" // Added z-10 to ensure it's on top
+        className="absolute top-2 right-2 p-2 rounded-full bg-black bg-opacity-50 text-white z-10"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"

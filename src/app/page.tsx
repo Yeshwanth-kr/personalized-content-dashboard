@@ -1,12 +1,11 @@
-// src/app/page.tsx
-"use client"; // This page now needs to be a client component to manage state
+"use client";
 
 import React, { useState } from "react";
 import { Sidebar } from "@/components/Sidebar";
 import { Header } from "@/components/Header";
 import { PersonalizedFeed } from "@/components/PersonalizedFeed";
 import { FavoritesSection } from "@/components/FavoritesSection";
-import { AnimatePresence } from "framer-motion"; // Import
+import { AnimatePresence } from "framer-motion";
 
 export default function Home() {
   const [activeView, setActiveView] = useState("feed");

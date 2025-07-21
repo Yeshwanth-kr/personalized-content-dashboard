@@ -1,14 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
 import uiReducer from "./slices/uiSlice";
-import contentReducer from "./slices/contentSlice"; // Import the new reducer
-import favoritesReducer from "./slices/favoritesSlice"; // Import
+import contentReducer from "./slices/contentSlice";
+import favoritesReducer from "./slices/favoritesSlice";
 
 export const store = configureStore({
   reducer: {
     ui: uiReducer,
     content: contentReducer,
     favorites: favoritesReducer,
-    // Add other slices here as you create them (e.g., news, recommendations)
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
