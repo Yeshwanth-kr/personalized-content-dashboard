@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { AppDispatch, RootState } from "@/store/store";
 import { fetchAllContent } from "@/store/slices/contentSlice";
-import { DraggableContentCard } from "./DraggableContentCard"; // We will create this next
+import { DraggableContentCard } from "./DraggableContentCard";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 import { Spinner } from "./Spinner";
