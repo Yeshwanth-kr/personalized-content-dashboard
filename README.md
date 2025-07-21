@@ -46,6 +46,10 @@ This project is a dynamic and interactive "Personalized Content Dashboard" built
 | API Fetching               | Axios                                |
 | Testing                    | Jest, React Testing Library, Cypress |
 
+## 📸 Loom video
+
+[![Watch the video](https://github.com/Yeshwanth-kr/personalized-content-dashboard/blob/main/assets/project-image.png)](https://drive.google.com/file/d/1AZykZliTsKTBY9D6ygTNN5GJirC-QGiE/view?usp=sharing)
+
 ## Getting Started
 
 Follow these instructions to get a copy of the project up and running on your local machine for development and testing purposes.
